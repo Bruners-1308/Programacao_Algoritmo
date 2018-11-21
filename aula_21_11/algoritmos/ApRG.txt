@@ -1,0 +1,33 @@
+package aprg;
+import java.util.*;
+
+public class ApRG {
+
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        String  NUM;
+       
+        int I,N=0, DC;
+        int NUMV[] = new int[8];
+        
+        System.out.printf("Digite o numero do rg: ");
+        NUM = sc.next();
+        
+        for (I=0; I<=NUMV.length-1; I++)
+        {
+            NUMV[I] = Integer.parseInt(NUM.substring(I,I+1));
+        }
+        for (I=0; I<=NUMV.length-1; I++)
+        {
+            N = N + NUMV[I]*(I+2);
+        }
+        DC =(11 - (N % 11));
+        if (DC >9)
+            System.out.printf("\nDC = X \n");
+        else
+            System.out.printf("\nDC = %d \n",DC);
+    }
+    
+}
